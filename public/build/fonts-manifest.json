@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "style": {
+    "file": "assets/fonts-BirFSt_F.css",
+    "familyStyles": {
+      "noto-kufi-arabic": "@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-400-normal-BIMeMYep.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-400-normal-9DDibutD.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-500-normal-B6DUqak9.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-500-normal-BKKDuk0u.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-600-normal-BU20Dfqv.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-600-normal-UiIawE5u.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-700-normal-CeymQha4.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Kufi Arabic\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/noto-kufi-arabic-700-normal-CyuqOqA9.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-noto-kufi-arabic {\n  font-family: var(--font-noto-kufi-arabic);\n}",
+      "noto-naskh-arabic": "@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-400-normal-Dajb6q3W.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-400-normal-pwOnwvFs.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-500-normal-Bhl__RG1.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-500-normal-CYujSvJF.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-600-normal-DByBVxli.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-600-normal-16Vd4b9R.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-700-normal-CG_vrPqD.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Noto Naskh Arabic\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/noto-naskh-arabic-700-normal-DP4-Rtre.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-noto-naskh-arabic {\n  font-family: var(--font-noto-naskh-arabic);\n}",
+      "ibm-plex-sans-arabic": "@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-300-normal-B_2Ptpb1.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-300-normal-D4-nvPU-.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-400-normal-Bo5KPYvw.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-400-normal-CFZh1unN.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-500-normal-Cd6jVIg7.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-500-normal-BletK1Hp.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-600-normal-KrqB56Mw.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Sans Arabic\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-sans-arabic-600-normal-Dk5eISD_.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-ibm-plex-sans-arabic {\n  font-family: var(--font-ibm-plex-sans-arabic);\n}",
+      "space-grotesk": "@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-400-normal-CJ-V5oYT.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-400-normal-BnQMeOim.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-500-normal-lFbtlQH6.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-500-normal-CNSSEhBt.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-600-normal-DjKNqYRj.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-600-normal-BflQw4A9.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-700-normal-RjhwGPKo.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Space Grotesk\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/build/assets/space-grotesk-700-normal-CwsQ-cCU.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-space-grotesk {\n  font-family: var(--font-space-grotesk);\n}",
+      "ibm-plex-mono": "@font-face {\n  font-family: \"IBM Plex Mono\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-mono-400-normal-DMJ8VG8y.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Mono\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-mono-400-normal-CvHOgSBP.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Mono\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-mono-500-normal-DSY6xOcd.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"IBM Plex Mono\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"/build/assets/ibm-plex-mono-500-normal-CB9ihrfo.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-ibm-plex-mono {\n  font-family: var(--font-ibm-plex-mono);\n}"
+    },
+    "variables": {
+      "noto-kufi-arabic": "--font-noto-kufi-arabic: \"Noto Kufi Arabic\";",
+      "noto-naskh-arabic": "--font-noto-naskh-arabic: \"Noto Naskh Arabic\";",
+      "ibm-plex-sans-arabic": "--font-ibm-plex-sans-arabic: \"IBM Plex Sans Arabic\";",
+      "space-grotesk": "--font-space-grotesk: \"Space Grotesk\";",
+      "ibm-plex-mono": "--font-ibm-plex-mono: \"IBM Plex Mono\";"
+    }
+  },
+  "preloads": [
+    {
+      "alias": "noto-kufi-arabic",
+      "family": "Noto Kufi Arabic",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/noto-kufi-arabic-400-normal-BIMeMYep.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-kufi-arabic",
+      "family": "Noto Kufi Arabic",
+      "weight": 500,
+      "style": "normal",
+      "file": "assets/noto-kufi-arabic-500-normal-B6DUqak9.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-kufi-arabic",
+      "family": "Noto Kufi Arabic",
+      "weight": 600,
+      "style": "normal",
+      "file": "assets/noto-kufi-arabic-600-normal-BU20Dfqv.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-kufi-arabic",
+      "family": "Noto Kufi Arabic",
+      "weight": 700,
+      "style": "normal",
+      "file": "assets/noto-kufi-arabic-700-normal-CeymQha4.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-naskh-arabic",
+      "family": "Noto Naskh Arabic",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/noto-naskh-arabic-400-normal-Dajb6q3W.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-naskh-arabic",
+      "family": "Noto Naskh Arabic",
+      "weight": 500,
+      "style": "normal",
+      "file": "assets/noto-naskh-arabic-500-normal-Bhl__RG1.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-naskh-arabic",
+      "family": "Noto Naskh Arabic",
+      "weight": 600,
+      "style": "normal",
+      "file": "assets/noto-naskh-arabic-600-normal-DByBVxli.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "noto-naskh-arabic",
+      "family": "Noto Naskh Arabic",
+      "weight": 700,
+      "style": "normal",
+      "file": "assets/noto-naskh-arabic-700-normal-CG_vrPqD.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-sans-arabic",
+      "family": "IBM Plex Sans Arabic",
+      "weight": 300,
+      "style": "normal",
+      "file": "assets/ibm-plex-sans-arabic-300-normal-B_2Ptpb1.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-sans-arabic",
+      "family": "IBM Plex Sans Arabic",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/ibm-plex-sans-arabic-400-normal-Bo5KPYvw.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-sans-arabic",
+      "family": "IBM Plex Sans Arabic",
+      "weight": 500,
+      "style": "normal",
+      "file": "assets/ibm-plex-sans-arabic-500-normal-Cd6jVIg7.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-sans-arabic",
+      "family": "IBM Plex Sans Arabic",
+      "weight": 600,
+      "style": "normal",
+      "file": "assets/ibm-plex-sans-arabic-600-normal-KrqB56Mw.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "space-grotesk",
+      "family": "Space Grotesk",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/space-grotesk-400-normal-CJ-V5oYT.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "space-grotesk",
+      "family": "Space Grotesk",
+      "weight": 500,
+      "style": "normal",
+      "file": "assets/space-grotesk-500-normal-lFbtlQH6.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "space-grotesk",
+      "family": "Space Grotesk",
+      "weight": 600,
+      "style": "normal",
+      "file": "assets/space-grotesk-600-normal-DjKNqYRj.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "space-grotesk",
+      "family": "Space Grotesk",
+      "weight": 700,
+      "style": "normal",
+      "file": "assets/space-grotesk-700-normal-RjhwGPKo.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-mono",
+      "family": "IBM Plex Mono",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/ibm-plex-mono-400-normal-DMJ8VG8y.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "ibm-plex-mono",
+      "family": "IBM Plex Mono",
+      "weight": 500,
+      "style": "normal",
+      "file": "assets/ibm-plex-mono-500-normal-DSY6xOcd.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    }
+  ],
+  "families": {
+    "noto-kufi-arabic": {
+      "family": "Noto Kufi Arabic",
+      "variable": "--font-noto-kufi-arabic",
+      "variants": {
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/noto-kufi-arabic-400-normal-BIMeMYep.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-kufi-arabic-400-normal-9DDibutD.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/noto-kufi-arabic-500-normal-B6DUqak9.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-kufi-arabic-500-normal-BKKDuk0u.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "600:normal": {
+          "files": [
+            {
+              "file": "assets/noto-kufi-arabic-600-normal-BU20Dfqv.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-kufi-arabic-600-normal-UiIawE5u.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/noto-kufi-arabic-700-normal-CeymQha4.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-kufi-arabic-700-normal-CyuqOqA9.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "noto-naskh-arabic": {
+      "family": "Noto Naskh Arabic",
+      "variable": "--font-noto-naskh-arabic",
+      "variants": {
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/noto-naskh-arabic-400-normal-Dajb6q3W.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-naskh-arabic-400-normal-pwOnwvFs.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/noto-naskh-arabic-500-normal-Bhl__RG1.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-naskh-arabic-500-normal-CYujSvJF.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "600:normal": {
+          "files": [
+            {
+              "file": "assets/noto-naskh-arabic-600-normal-DByBVxli.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-naskh-arabic-600-normal-16Vd4b9R.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/noto-naskh-arabic-700-normal-CG_vrPqD.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/noto-naskh-arabic-700-normal-DP4-Rtre.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "ibm-plex-sans-arabic": {
+      "family": "IBM Plex Sans Arabic",
+      "variable": "--font-ibm-plex-sans-arabic",
+      "variants": {
+        "300:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-sans-arabic-300-normal-B_2Ptpb1.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-sans-arabic-300-normal-D4-nvPU-.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-sans-arabic-400-normal-Bo5KPYvw.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-sans-arabic-400-normal-CFZh1unN.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-sans-arabic-500-normal-Cd6jVIg7.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-sans-arabic-500-normal-BletK1Hp.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "600:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-sans-arabic-600-normal-KrqB56Mw.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-sans-arabic-600-normal-Dk5eISD_.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "space-grotesk": {
+      "family": "Space Grotesk",
+      "variable": "--font-space-grotesk",
+      "variants": {
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/space-grotesk-400-normal-CJ-V5oYT.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/space-grotesk-400-normal-BnQMeOim.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/space-grotesk-500-normal-lFbtlQH6.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/space-grotesk-500-normal-CNSSEhBt.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "600:normal": {
+          "files": [
+            {
+              "file": "assets/space-grotesk-600-normal-DjKNqYRj.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/space-grotesk-600-normal-BflQw4A9.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/space-grotesk-700-normal-RjhwGPKo.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/space-grotesk-700-normal-CwsQ-cCU.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "variable": "--font-ibm-plex-mono",
+      "variants": {
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-mono-400-normal-DMJ8VG8y.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-mono-400-normal-CvHOgSBP.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        },
+        "500:normal": {
+          "files": [
+            {
+              "file": "assets/ibm-plex-mono-500-normal-DSY6xOcd.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            },
+            {
+              "file": "assets/ibm-plex-mono-500-normal-CB9ihrfo.woff",
+              "format": "woff",
+              "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
