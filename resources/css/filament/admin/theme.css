@@ -1,0 +1,2254 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* =====================================================================
+   VIVIO ADMIN — INTERNAL OPERATING SYSTEM
+   =====================================================================
+   A complete dark-first design system for the VIVIO admin panel.
+   Every Filament surface is overridden to VIVIO brand identity.
+   No white surfaces. No generic Filament patterns.
+   ===================================================================== */
+
+/* =====================================================================
+   1. DESIGN TOKENS — Tailwind v4 @theme
+   ===================================================================== */
+
+@theme {
+    --color-gray-50: #0B1728;
+    --color-gray-100: #07111F;
+    --color-gray-200: #05080D;
+    --color-gray-300: #101C2C;
+    --color-gray-400: #1B3048;
+    --color-gray-500: #2A3A4D;
+    --color-gray-600: #3D4E6A;
+    --color-gray-700: #5B6C88;
+    --color-gray-800: #8EA2BC;
+    --color-gray-900: #AFC0D4;
+    --color-gray-950: #FFFFFF;
+
+    --color-primary-50: #EAF3FF;
+    --color-primary-100: #D3E6FF;
+    --color-primary-200: #A8CDFF;
+    --color-primary-300: #7AAEFF;
+    --color-primary-400: #4D90FF;
+    --color-primary-500: #2F8CFF;
+    --color-primary-600: #1677FF;
+    --color-primary-700: #0E5FD6;
+    --color-primary-800: #0F4CA8;
+    --color-primary-900: #124084;
+    --color-primary-950: #0D2A56;
+
+    --color-danger-50: #2A1215;
+    --color-danger-100: #3B1518;
+    --color-danger-200: #5C1A1E;
+    --color-danger-300: #8B2528;
+    --color-danger-400: #B92E31;
+    --color-danger-500: #EF4444;
+    --color-danger-600: #DC2626;
+    --color-danger-700: #B91C1C;
+    --color-danger-800: #991B1B;
+    --color-danger-900: #7F1D1D;
+    --color-danger-950: #450A0A;
+
+    --color-success-50: #0A2E16;
+    --color-success-100: #14532D;
+    --color-success-200: #166534;
+    --color-success-300: #15803D;
+    --color-success-400: #16A34A;
+    --color-success-500: #22C55E;
+    --color-success-600: #4ADE80;
+    --color-success-700: #86EFAC;
+    --color-success-800: #BBF7D0;
+    --color-success-900: #DCFCE7;
+    --color-success-950: #F0FDF4;
+
+    --color-warning-50: #451A03;
+    --color-warning-100: #78350F;
+    --color-warning-200: #92400E;
+    --color-warning-300: #B45309;
+    --color-warning-400: #D97706;
+    --color-warning-500: #F59E0B;
+    --color-warning-600: #FBBF24;
+    --color-warning-700: #FCD34D;
+    --color-warning-800: #FDE68A;
+    --color-warning-900: #FEF3C7;
+    --color-warning-950: #FFFBEB;
+
+    --color-info-50: #172554;
+    --color-info-100: #1E3A8A;
+    --color-info-200: #1E40AF;
+    --color-info-300: #1D4ED8;
+    --color-info-400: #2563EB;
+    --color-info-500: #3B82F6;
+    --color-info-600: #60A5FA;
+    --color-info-700: #93C5FD;
+    --color-info-800: #BFDBFE;
+    --color-info-900: #DBEAFE;
+    --color-info-950: #EFF6FF;
+
+    --color-black: #05080D;
+    --color-white: #FFFFFF;
+
+    --radius-xs: 0.125rem;
+    --radius-sm: 0.1875rem;
+    --radius-md: 0.25rem;
+    --radius-lg: 0.3125rem;
+    --radius-xl: 0.375rem;
+    --radius-2xl: 0.5rem;
+    --radius-3xl: 0.75rem;
+    --radius-4xl: 1rem;
+
+    --font-family: 'IBM Plex Sans Arabic', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --mono-font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* =====================================================================
+   2. CSS CUSTOM PROPERTIES — runtime design tokens
+   ===================================================================== */
+
+:root {
+    --gray-50: #0B1728;
+    --gray-100: #07111F;
+    --gray-200: #05080D;
+    --gray-300: #101C2C;
+    --gray-400: #1B3048;
+    --gray-500: #2A3A4D;
+    --gray-600: #3D4E6A;
+    --gray-700: #5B6C88;
+    --gray-800: #8EA2BC;
+    --gray-900: #AFC0D4;
+    --gray-950: #FFFFFF;
+
+    --primary-50: #EAF3FF;
+    --primary-100: #D3E6FF;
+    --primary-200: #A8CDFF;
+    --primary-300: #7AAEFF;
+    --primary-400: #4D90FF;
+    --primary-500: #2F8CFF;
+    --primary-600: #1677FF;
+    --primary-700: #0E5FD6;
+    --primary-800: #0F4CA8;
+    --primary-900: #124084;
+    --primary-950: #0D2A56;
+
+    --vivio-bg: #05080D;
+    --vivio-surface: #07111F;
+    --vivio-elevated: #0B1728;
+    --vivio-overlay: #101C2C;
+    --vivio-border: #1B3048;
+    --vivio-border-subtle: rgba(255, 255, 255, 0.05);
+    --vivio-text: #FFFFFF;
+    --vivio-text-secondary: #AFC0D4;
+    --vivio-text-muted: #8EA2BC;
+    --vivio-accent: #1677FF;
+    --vivio-accent-hover: #2F8CFF;
+    --vivio-hover: rgba(22, 119, 255, 0.06);
+
+    --sidebar-width: 17rem;
+    --collapsed-sidebar-width: 4.5rem;
+    --font-family: 'IBM Plex Sans Arabic', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --mono-font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dark {
+    --gray-50: #0B1728;
+    --gray-100: #07111F;
+    --gray-200: #05080D;
+    --gray-300: #101C2C;
+    --gray-400: #1B3048;
+    --gray-500: #2A3A4D;
+    --gray-600: #3D4E6A;
+    --gray-700: #5B6C88;
+    --gray-800: #8EA2BC;
+    --gray-900: #AFC0D4;
+    --gray-950: #FFFFFF;
+
+    --vivio-bg: #05080D;
+    --vivio-surface: #07111F;
+    --vivio-elevated: #0B1728;
+    --vivio-overlay: #101C2C;
+    --vivio-border: #1B3048;
+    --vivio-border-subtle: rgba(255, 255, 255, 0.05);
+    --vivio-text: #FFFFFF;
+    --vivio-text-secondary: #AFC0D4;
+    --vivio-text-muted: #8EA2BC;
+    --vivio-hover: rgba(22, 119, 255, 0.06);
+}
+
+/* =====================================================================
+   3. GLOBAL RESETS — body, html, typography, scrollbar, selection
+   ===================================================================== */
+
+html.fi {
+    background-color: var(--vivio-bg) !important;
+}
+
+body.fi-body,
+body.fi-body.bg-white,
+body.fi-body.bg-gray-50,
+body.fi-body.bg-gray-900,
+body.fi-body.bg-gray-950 {
+    font-family: var(--font-family) !important;
+    letter-spacing: 0.005em !important;
+    color: var(--vivio-text) !important;
+    background-color: var(--vivio-bg) !important;
+}
+
+* {
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(103, 112, 127, 0.3) transparent !important;
+}
+
+::-webkit-scrollbar { width: 5px !important; height: 5px !important; }
+::-webkit-scrollbar-thumb { background: rgba(103, 112, 127, 0.25) !important; border-radius: 3px !important; }
+::-webkit-scrollbar-track { background: transparent !important; }
+
+::selection {
+    background-color: rgba(22, 119, 255, 0.3) !important;
+    color: #FFFFFF !important;
+}
+
+/* =====================================================================
+   4. LAYOUT — page structure
+   ===================================================================== */
+
+.fi-layout,
+.fi-layout.bg-white, .fi-layout.bg-gray-50, .fi-layout.bg-gray-900, .fi-layout.bg-gray-950,
+.fi-main-ctn,
+.fi-main-ctn.bg-white, .fi-main-ctn.bg-gray-50, .fi-main-ctn.bg-gray-900, .fi-main-ctn.bg-gray-950,
+.fi-main,
+.fi-main.bg-white, .fi-main.bg-gray-50, .fi-main.bg-gray-900, .fi-main.bg-gray-950 {
+    background-color: var(--vivio-bg) !important;
+}
+
+.fi-page {
+    color: var(--vivio-text) !important;
+}
+
+.fi-page-header-main-ctn {
+    padding-top: 1.5rem !important;
+    padding-bottom: 0 !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-page-content {
+    color: var(--vivio-text) !important;
+}
+
+/* =====================================================================
+   5. SIDEBAR — deep navy, architectural navigation
+   ===================================================================== */
+
+.fi-sidebar,
+.fi-sidebar.bg-white, .fi-sidebar.bg-gray-50, .fi-sidebar.bg-gray-900,
+.fi-sidebar.bg-gray-950, .fi-sidebar.bg-gray-800,
+.fi-sidebar-ctn,
+.fi-sidebar-ctn.bg-white, .fi-sidebar-ctn.bg-gray-50, .fi-sidebar-ctn.bg-gray-900,
+.fi-sidebar-ctn.bg-gray-950, .fi-sidebar-ctn.bg-gray-800 {
+    background-color: #07111F !important;
+    border-inline-end: 1px solid var(--vivio-border) !important;
+    box-shadow: none !important;
+}
+
+.fi-sidebar-header-ctn {
+    border-bottom: 1px solid var(--vivio-border-subtle) !important;
+    background-color: transparent !important;
+}
+
+.fi-sidebar-header {
+    padding-inline: 1.25rem !important;
+    min-height: 5rem !important;
+    padding-block: 1rem !important;
+}
+
+.fi-sidebar-header-logo-ctn {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+}
+
+.fi-sidebar-header .fi-logo,
+.fi-logo {
+    max-height: 2rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+.vivio-sidebar-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-top: 0.35rem;
+}
+
+.vivio-sidebar-tag {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.35em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+}
+
+.vivio-sidebar-tag--sub {
+    color: rgba(255, 255, 255, 0.18) !important;
+    font-size: 0.52rem !important;
+}
+
+.fi-sidebar-group-label,
+.fi-sidebar-group-label.text-xs,
+.fi-sidebar-group-btn .text-xs {
+    color: rgba(255, 255, 255, 0.25) !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+}
+
+.fi-sidebar-group-btn > .fi-icon {
+    color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.fi-sidebar-group + .fi-sidebar-group {
+    margin-top: 1rem !important;
+    padding-top: 0.85rem !important;
+    border-top: 1px solid var(--vivio-border-subtle) !important;
+}
+
+.fi-sidebar-item-btn {
+    border-radius: var(--radius-md) !important;
+    padding: 0.5rem 0.7rem !important;
+    transition: background-color 130ms ease, color 130ms ease !important;
+    margin: 0.05rem 0.4rem !important;
+}
+
+.fi-sidebar-item-btn > .fi-icon {
+    color: rgba(255, 255, 255, 0.28) !important;
+    transition: color 130ms ease !important;
+    width: 1.15rem !important;
+    height: 1.15rem !important;
+}
+
+.fi-sidebar-item-label {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 0.82rem !important;
+    font-weight: 450 !important;
+    letter-spacing: 0.01em !important;
+    transition: color 130ms ease !important;
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover > .fi-sidebar-item-label {
+    color: #FFFFFF !important;
+}
+
+.fi-sidebar-item.fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover > .fi-icon {
+    color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn,
+.fi-sidebar-item.fi-sidebar-item-active > .fi-sidebar-item-btn {
+    background-color: rgba(22, 119, 255, 0.1) !important;
+    position: relative !important;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn::before,
+.fi-sidebar-item.fi-sidebar-item-active > .fi-sidebar-item-btn::before {
+    content: '' !important;
+    position: absolute !important;
+    inset-block: 0.25rem !important;
+    inset-inline-start: -0.6rem !important;
+    width: 2px !important;
+    border-radius: 1px !important;
+    background: #1677FF !important;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-icon,
+.fi-sidebar-item.fi-sidebar-item-active > .fi-sidebar-item-btn > .fi-icon {
+    color: #2F8CFF !important;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-sidebar-item-label,
+.fi-sidebar-item.fi-sidebar-item-active > .fi-sidebar-item-btn > .fi-sidebar-item-label {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+}
+
+.fi-sidebar-item .fi-badge,
+.fi-badge.bg-primary-500, .fi-badge.bg-primary-600, .fi-badge.bg-primary-100 {
+    background-color: transparent !important;
+    border: 1px solid rgba(22, 119, 255, 0.4) !important;
+    color: #2F8CFF !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.08em !important;
+    padding-inline: 0.4rem !important;
+    padding-block: 0.1rem !important;
+}
+
+.fi-sidebar-footer {
+    border-top: 1px solid var(--vivio-border-subtle) !important;
+    background-color: transparent !important;
+}
+
+.fi-sidebar-close-overlay {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* =====================================================================
+   6. TOPBAR — dark, minimal, operating system feel
+   ===================================================================== */
+
+.fi-topbar-ctn,
+.fi-topbar-ctn.bg-white, .fi-topbar-ctn.bg-gray-50,
+.fi-topbar-ctn.bg-gray-900, .fi-topbar-ctn.bg-gray-950 {
+    background-color: #05080D !important;
+}
+
+.fi-topbar,
+.fi-topbar.bg-white, .fi-topbar.bg-gray-50, .fi-topbar.bg-gray-900, .fi-topbar.bg-gray-950 {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--vivio-border) !important;
+    box-shadow: none !important;
+    min-height: 3.5rem !important;
+    padding-inline: 0.75rem !important;
+}
+
+.fi-topbar-item-btn {
+    border-radius: var(--radius-md) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    transition: background-color 130ms ease, color 130ms ease !important;
+    padding: 0.4rem !important;
+}
+
+.fi-topbar-item-btn:hover {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: #FFFFFF !important;
+}
+
+.fi-topbar-item-label {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 0.8rem !important;
+}
+
+.fi-topbar-item.fi-active .fi-topbar-item-label {
+    color: #1677FF !important;
+}
+
+.fi-topbar-open-sidebar-btn {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* =====================================================================
+   7. PAGE HEADER — editorial hierarchy
+   ===================================================================== */
+
+.fi-header {
+    padding-bottom: 0 !important;
+}
+
+.fi-header-heading,
+.fi-header-heading.text-2xl,
+.fi-header-heading.text-3xl {
+    font-family: 'Space Grotesk', var(--font-family) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text) !important;
+    line-height: 1.3 !important;
+}
+
+.fi-header-subheading {
+    font-size: 0.85rem !important;
+    color: var(--vivio-text-secondary) !important;
+    margin-top: 0.25rem !important;
+}
+
+.fi-breadcrumbs-item-label {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-breadcrumbs-item-label.fi-breadcrumbs-item-label-current,
+.fi-breadcrumbs-item-label-current {
+    color: var(--vivio-text) !important;
+    font-weight: 500 !important;
+}
+
+.fi-breadcrumbs-item-chevron {
+    color: var(--vivio-text-muted) !important;
+    opacity: 0.5 !important;
+}
+
+/* Context Strip — VIVIO breadcrumb system */
+.vivio-context-strip {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    margin-top: -0.75rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 1px solid var(--vivio-border) !important;
+}
+
+.vivio-context-strip .vivio-strip-label {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.24em !important;
+    text-transform: uppercase !important;
+    color: #1677FF !important;
+    font-weight: 500 !important;
+}
+
+.vivio-context-strip .vivio-strip-meta {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-muted) !important;
+}
+
+/* =====================================================================
+   8. TABLES — premium dark data surfaces
+   ===================================================================== */
+
+.fi-ta-ctn,
+.fi-ta-ctn.bg-white, .fi-ta-ctn.bg-gray-50,
+.fi-ta-ctn.bg-gray-900, .fi-ta-ctn.bg-gray-950,
+.fi-ta-ctn.rounded-xl, .fi-ta-ctn.rounded-2xl, .fi-ta-ctn.rounded-lg {
+    background-color: var(--vivio-surface) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+.fi-ta-table {
+    background-color: transparent !important;
+}
+
+.fi-ta-table thead,
+.fi-ta-table thead.bg-gray-50, .fi-ta-table thead.bg-gray-100,
+.fi-ta-table thead.bg-gray-200, .fi-ta-table thead.bg-gray-300,
+.fi-ta-table thead.bg-gray-900, .fi-ta-table thead.bg-gray-950 {
+    background-color: var(--vivio-elevated) !important;
+    border-bottom: 1px solid var(--vivio-border) !important;
+}
+
+.fi-ta-header-cell,
+.fi-ta-header-cell.text-xs, .fi-ta-header-cell.text-sm,
+.fi-ta-header-cell.sm\:text-xs, .fi-ta-header-cell.md\:text-xs,
+.fi-ta-header-cell.lg\:text-xs {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.6rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-muted) !important;
+    padding-block: 0.8rem !important;
+    padding-inline: 1rem !important;
+    background-color: transparent !important;
+}
+
+.fi-ta-header-cell-sort-btn {
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-ta-header-cell-sort-btn:hover {
+    color: var(--vivio-text) !important;
+}
+
+.fi-ta-header-cell-sort-btn-icon {
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-ta-body .fi-ta-row {
+    transition: background-color 120ms ease !important;
+    border-bottom: 1px solid var(--vivio-border-subtle) !important;
+}
+
+.fi-ta-body .fi-ta-row:last-child {
+    border-bottom: none !important;
+}
+
+.fi-ta-body .fi-ta-row,
+.fi-ta-body .fi-ta-row.bg-white, .fi-ta-body .fi-ta-row.bg-gray-50,
+.fi-ta-body .fi-ta-row.bg-gray-100, .fi-ta-body .fi-ta-row.bg-gray-200,
+.fi-ta-body .fi-ta-row.bg-gray-900, .fi-ta-body .fi-ta-row.bg-gray-950 {
+    background-color: transparent !important;
+}
+
+.fi-ta-body .fi-ta-row:hover,
+.fi-ta-body .fi-ta-row:hover.bg-white, .fi-ta-body .fi-ta-row:hover.bg-gray-50,
+.fi-ta-body .fi-ta-row:hover.bg-gray-100, .fi-ta-body .fi-ta-row:hover.bg-gray-200,
+.fi-ta-body .fi-ta-row:hover.bg-gray-900 {
+    background-color: var(--vivio-hover) !important;
+}
+
+.fi-ta-body .fi-ta-cell {
+    color: var(--vivio-text) !important;
+    padding-block: 0.8rem !important;
+    padding-inline: 1rem !important;
+}
+
+/* Table search */
+.fi-ta-search-input .fi-input,
+.fi-ta-search-input input {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-ta-search-input .fi-input:focus,
+.fi-ta-search-input input:focus {
+    border-color: #1677FF !important;
+    box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.18) !important;
+}
+
+/* Table filters */
+.fi-ta-filters {
+    border-bottom: 1px solid var(--vivio-border) !important;
+    padding-block: 0.75rem !important;
+}
+
+.fi-ta-filter-indicator-button,
+.fi-ta-filter-indicator-button.bg-gray-100, .fi-ta-filter-indicator-button.bg-gray-200,
+.fi-ta-filter-indicator-button.bg-gray-50 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-ta-filter-indicator-button:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-ta-toolbar,
+.fi-ta-toolbar.bg-gray-50, .fi-ta-toolbar.bg-gray-100,
+.fi-ta-toolbar.bg-gray-900, .fi-ta-toolbar.bg-gray-950 {
+    background-color: var(--vivio-surface) !important;
+    border-color: var(--vivio-border) !important;
+}
+
+.fi-ta-actions .fi-btn,
+.fi-ta-actions button {
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-ta-actions .fi-btn:hover,
+.fi-ta-actions button:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+/* Table empty state */
+.fi-ta-empty-state {
+    padding-block: 4rem !important;
+}
+
+.fi-ta-empty-state-icon-bg,
+.fi-ta-empty-state-icon-bg.bg-gray-100, .fi-ta-empty-state-icon-bg.bg-gray-900 {
+    background-color: var(--vivio-elevated) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.fi-ta-empty-state-heading {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-ta-empty-state-description {
+    font-size: 0.82rem !important;
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-ta-empty-state-actions .fi-btn-primary {
+    background-color: #1677FF !important;
+    border-color: #1677FF !important;
+    color: #FFFFFF !important;
+}
+
+.fi-ta-empty-state-actions .fi-btn-primary:hover {
+    background-color: #2F8CFF !important;
+    border-color: #2F8CFF !important;
+}
+
+/* Pagination */
+.fi-pagination {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0.06em !important;
+    padding: 0.75rem !important;
+    border-top: 1px solid var(--vivio-border-subtle) !important;
+}
+
+.fi-pagination-btn {
+    border-radius: var(--radius-md) !important;
+    color: var(--vivio-text-secondary) !important;
+    min-width: 2rem !important;
+    height: 2rem !important;
+}
+
+.fi-pagination-btn:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-pagination-btn.fi-active,
+.fi-pagination-btn.bg-primary-500, .fi-pagination-btn.bg-primary-600,
+.fi-pagination-btn.bg-primary-100 {
+    background-color: rgba(22, 119, 255, 0.15) !important;
+    color: #1677FF !important;
+}
+
+.fi-ta-reorder-handle {
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-ta-reorder-handle:hover {
+    color: var(--vivio-text-secondary) !important;
+}
+
+/* =====================================================================
+   9. FORMS — dark, precise inputs
+   ===================================================================== */
+
+.fi-input,
+.fi-input.bg-white, .fi-input.bg-gray-50,
+.fi-input.bg-gray-100, .fi-input.bg-gray-200,
+.fi-input.bg-gray-900, .fi-input.bg-gray-950,
+.fi-input.border-gray-300, .fi-input.border-gray-200, .fi-input.border-gray-700,
+input.fi-input, input[type="text"], input[type="email"], input[type="tel"],
+input[type="url"], input[type="password"], input[type="number"],
+input[type="date"], input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="time"] {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: none !important;
+    font-family: var(--font-family) !important;
+    font-size: 0.85rem !important;
+    transition: border-color 130ms ease, box-shadow 130ms ease !important;
+}
+
+.fi-input:focus,
+.fi-select:focus,
+.fi-textarea:focus,
+.fi-key-value-input:focus,
+input.fi-input:focus,
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus,
+input[type="url"]:focus, input[type="password"]:focus, input[type="number"]:focus,
+input[type="date"]:focus, input[type="datetime-local"]:focus {
+    border-color: #1677FF !important;
+    box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.18) !important;
+    outline: none !important;
+}
+
+.fi-input::placeholder,
+.fi-textarea::placeholder,
+input::placeholder {
+    color: var(--vivio-text-muted) !important;
+}
+
+.fi-select,
+.fi-select.bg-white, .fi-select.bg-gray-50,
+.fi-select.bg-gray-100, .fi-select.bg-gray-200,
+.fi-select.bg-gray-900, .fi-select.bg-gray-950,
+select.fi-select {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text) !important;
+    border-radius: var(--radius-md) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    padding-right: 2.5rem !important;
+    appearance: none !important;
+}
+
+.fi-textarea,
+.fi-textarea.bg-white, .fi-textarea.bg-gray-50,
+.fi-textarea.bg-gray-100, .fi-textarea.bg-gray-200,
+.fi-textarea.bg-gray-900, .fi-textarea.bg-gray-950,
+textarea.fi-textarea {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text) !important;
+    border-radius: var(--radius-md) !important;
+    font-family: var(--font-family) !important;
+}
+
+.fi-fo-field-wrp {
+    border-radius: 0 !important;
+}
+
+.fi-fo-field-wrp-label,
+.fi-fo-field-wrp-label.text-sm, .fi-fo-field-wrp-label.text-xs {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.66rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-fo-field-wrp-error-message {
+    color: #EF4444 !important;
+    font-size: 0.76rem !important;
+    margin-top: 0.35rem !important;
+}
+
+.fi-fo-field-wrp-helper-text {
+    color: var(--vivio-text-muted) !important;
+    font-size: 0.78rem !important;
+}
+
+/* =====================================================================
+   10. RICH EDITOR (Tiptap)
+   ===================================================================== */
+
+.fi-fo-rich-editor,
+.fi-fo-rich-editor.bg-white, .fi-fo-rich-editor.bg-gray-50,
+.fi-fo-rich-editor.bg-gray-100, .fi-fo-rich-editor.bg-gray-200,
+.fi-fo-rich-editor.bg-gray-900, .fi-fo-rich-editor.bg-gray-950 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.fi-fo-rich-editor .tiptap,
+.fi-fo-rich-editor .tiptap.bg-white, .fi-fo-rich-editor .tiptap.bg-gray-50,
+.fi-fo-rich-editor .tiptap.bg-gray-100, .fi-fo-rich-editor .tiptap.bg-gray-200 {
+    background-color: transparent !important;
+    color: var(--vivio-text) !important;
+    border: none !important;
+    padding: 1rem !important;
+    min-height: 200px !important;
+    font-family: var(--font-family) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+}
+
+.fi-fo-rich-editor .tiptap:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.fi-fo-rich-editor .tiptap p { color: var(--vivio-text) !important; margin-bottom: 0.75em !important; }
+.fi-fo-rich-editor .tiptap h2 { color: var(--vivio-text) !important; font-size: 1.3rem !important; font-weight: 600 !important; margin-top: 1.5em !important; margin-bottom: 0.5em !important; }
+.fi-fo-rich-editor .tiptap h3 { color: var(--vivio-text) !important; font-size: 1.1rem !important; font-weight: 600 !important; margin-top: 1.25em !important; margin-bottom: 0.4em !important; }
+.fi-fo-rich-editor .tiptap a { color: #1677FF !important; }
+.fi-fo-rich-editor .tiptap strong { color: var(--vivio-text) !important; font-weight: 600 !important; }
+.fi-fo-rich-editor .tiptap em { color: var(--vivio-text-secondary) !important; }
+
+.fi-fo-rich-editor .tiptap blockquote {
+    border-inline-start: 3px solid #1677FF !important;
+    padding-inline-start: 1rem !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-fo-rich-editor .tiptap code {
+    background-color: rgba(22, 119, 255, 0.1) !important;
+    color: #2F8CFF !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 0.15em 0.35em !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.88em !important;
+}
+
+.fi-fo-rich-editor .tiptap pre {
+    background-color: #05080D !important;
+    color: #E2E8F0 !important;
+    border-radius: var(--radius-md) !important;
+    padding: 1rem !important;
+    overflow-x: auto !important;
+}
+
+.fi-fo-rich-editor .tiptap pre code { background: none !important; color: inherit !important; padding: 0 !important; }
+
+.fi-fo-rich-editor .tiptap ul, .fi-fo-rich-editor .tiptap ol {
+    padding-inline-start: 1.5em !important;
+    margin-bottom: 0.75em !important;
+}
+
+.fi-fo-rich-editor .tiptap li { color: var(--vivio-text) !important; margin-bottom: 0.25em !important; }
+
+.fi-fo-rich-editor-toolbar,
+.fi-fo-rich-editor-toolbar.bg-gray-50, .fi-fo-rich-editor-toolbar.bg-gray-100,
+.fi-fo-rich-editor-toolbar.bg-gray-200, .fi-fo-rich-editor-toolbar.bg-gray-900,
+.fi-fo-rich-editor-toolbar.bg-gray-950 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-bottom: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+}
+
+.fi-fo-rich-editor-toolbar-btn {
+    color: var(--vivio-text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.fi-fo-rich-editor-toolbar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-fo-rich-editor-toolbar-btn.fi-active,
+.fi-fo-rich-editor-toolbar-btn.text-primary-600 {
+    background-color: rgba(22, 119, 255, 0.15) !important;
+    color: #1677FF !important;
+}
+
+/* =====================================================================
+   11. TAGS INPUT
+   ===================================================================== */
+
+.fi-tags-input-container,
+.fi-tags-input-container.bg-white, .fi-tags-input-container.bg-gray-50,
+.fi-tags-input-container.bg-gray-100, .fi-tags-input-container.bg-gray-200,
+.fi-tags-input-container.bg-gray-900, .fi-tags-input-container.bg-gray-950 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.fi-tag,
+.fi-tag.bg-primary-500, .fi-tag.bg-primary-600, .fi-tag.bg-primary-100,
+.fi-tag.bg-primary-50, .fi-tag.text-primary-700 {
+    background-color: rgba(22, 119, 255, 0.12) !important;
+    border: 1px solid rgba(22, 119, 255, 0.25) !important;
+    color: #2F8CFF !important;
+    border-radius: var(--radius-sm) !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.04em !important;
+}
+
+.fi-tag-delete-btn {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.fi-tag-delete-btn:hover {
+    color: #EF4444 !important;
+}
+
+/* =====================================================================
+   12. FILE UPLOAD
+   ===================================================================== */
+
+.fi-upload-zone,
+.fi-upload-zone.bg-gray-50, .fi-upload-zone.bg-gray-100,
+.fi-upload-zone.bg-gray-200, .fi-upload-zone.bg-gray-900,
+.fi-upload-zone.bg-gray-950, .fi-upload-zone.border-gray-300,
+.fi-upload-zone.border-dashed {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-style: dashed !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--vivio-text-muted) !important;
+    transition: border-color 130ms ease, background-color 130ms ease !important;
+}
+
+.fi-upload-zone:hover,
+.fi-upload-zone[data-is-open],
+.fi-upload-zone.border-primary-500,
+.fi-upload-zone.border-primary-300 {
+    border-color: #1677FF !important;
+    background-color: rgba(22, 119, 255, 0.04) !important;
+}
+
+.fi-upload-file-entry {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.fi-upload-file-entry-name {
+    color: var(--vivio-text) !important;
+}
+
+.fi-upload-file-entry-details {
+    color: var(--vivio-text-muted) !important;
+}
+
+/* =====================================================================
+   13. TOGGLE
+   ===================================================================== */
+
+.fi-toggle-input:checked,
+.fi-toggle-input.bg-primary-600, .fi-toggle-input.bg-primary-500 {
+    background-color: #1677FF !important;
+}
+
+.fi-toggle-input,
+.fi-toggle-input.bg-gray-200, .fi-toggle-input.bg-gray-300,
+.fi-toggle-input.bg-gray-700, .fi-toggle-input.bg-gray-600 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+}
+
+/* =====================================================================
+   14. CHECKBOX
+   ===================================================================== */
+
+.fi-checkbox-input:checked,
+.fi-checkbox-input.bg-primary-600, .fi-checkbox-input.bg-primary-500 {
+    background-color: #1677FF !important;
+    border-color: #1677FF !important;
+}
+
+.fi-checkbox-input,
+.fi-checkbox-input.border-gray-300, .fi-checkbox-input.border-gray-200,
+.fi-checkbox-input.border-gray-700 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* =====================================================================
+   15. RADIO
+   ===================================================================== */
+
+.fi-radio-input:checked,
+.fi-radio-input.border-primary-600, .fi-radio-input.border-primary-500 {
+    border-color: #1677FF !important;
+    background-color: #1677FF !important;
+}
+
+.fi-radio-input,
+.fi-radio-input.border-gray-300, .fi-radio-input.border-gray-200,
+.fi-radio-input.border-gray-700 {
+    border-color: var(--vivio-border) !important;
+    background-color: var(--vivio-elevated) !important;
+}
+
+/* =====================================================================
+   16. DATE/TIME PICKER
+   ===================================================================== */
+
+.fi-datetime-picker-dropdown,
+.fi-datetime-picker-dropdown.bg-white, .fi-datetime-picker-dropdown.bg-gray-50,
+.fi-datetime-picker-dropdown.bg-gray-100, .fi-datetime-picker-dropdown.bg-gray-200,
+.fi-datetime-picker-dropdown.bg-gray-900, .fi-datetime-picker-dropdown.bg-gray-950 {
+    background-color: var(--vivio-overlay) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
+}
+
+.fi-datetime-picker-calendar-day {
+    color: var(--vivio-text) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.fi-datetime-picker-calendar-day:hover {
+    background-color: var(--vivio-hover) !important;
+}
+
+.fi-datetime-picker-calendar-day.fi-active,
+.fi-datetime-picker-calendar-day.bg-primary-600, .fi-datetime-picker-calendar-day.bg-primary-500 {
+    background-color: #1677FF !important;
+    color: #FFFFFF !important;
+}
+
+.fi-datetime-picker-calendar-header-label {
+    color: var(--vivio-text) !important;
+    font-weight: 500 !important;
+}
+
+.fi-datetime-picker-calendar-header-btn {
+    color: var(--vivio-text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.fi-datetime-picker-calendar-header-btn:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+/* =====================================================================
+   17. SECTIONS / CARDS
+   ===================================================================== */
+
+.fi-section,
+.fi-section.bg-white, .fi-section.bg-gray-50,
+.fi-section.bg-gray-100, .fi-section.bg-gray-200,
+.fi-section.bg-gray-900, .fi-section.bg-gray-950,
+.fi-section.rounded-xl, .fi-section.rounded-2xl, .fi-section.rounded-lg {
+    background-color: var(--vivio-surface) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: none !important;
+}
+
+.fi-section-header {
+    border-bottom: 1px solid var(--vivio-border-subtle) !important;
+    padding: 1rem 1.25rem !important;
+}
+
+.fi-section-header-heading,
+.fi-section-header-heading.text-lg, .fi-section-header-heading.text-sm {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.66rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-section-header-description {
+    font-size: 0.8rem !important;
+    color: var(--vivio-text-muted) !important;
+    margin-top: 0.25rem !important;
+}
+
+.fi-section-content-ctn {
+    padding: 1.25rem !important;
+}
+
+.fi-section-footer {
+    border-top: 1px solid var(--vivio-border-subtle) !important;
+}
+
+.fi-fieldset {
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.fi-fieldset Legend,
+.fi-fieldset legend {
+    color: var(--vivio-text-secondary) !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.66rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+}
+
+/* =====================================================================
+   18. BUTTONS
+   ===================================================================== */
+
+.fi-btn {
+    border-radius: var(--radius-md) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+    font-size: 0.82rem !important;
+    transition: background-color 130ms ease, border-color 130ms ease, color 130ms ease !important;
+    font-family: var(--font-family) !important;
+}
+
+.fi-btn-primary,
+.fi-btn.bg-primary-600, .fi-btn.bg-primary-500, .fi-btn.bg-primary-700 {
+    background-color: #1677FF !important;
+    border-color: #1677FF !important;
+    color: #FFFFFF !important;
+}
+
+.fi-btn-primary:hover,
+.fi-btn.bg-primary-600:hover, .fi-btn.bg-primary-500:hover {
+    background-color: #2F8CFF !important;
+    border-color: #2F8CFF !important;
+}
+
+.fi-btn-danger,
+.fi-btn.bg-danger-600, .fi-btn.bg-danger-500, .fi-btn.bg-red-600, .fi-btn.bg-red-500,
+.fi-btn-danger-700, .fi-btn.text-danger-600 {
+    background-color: #DC2626 !important;
+    border-color: #DC2626 !important;
+    color: #FFFFFF !important;
+}
+
+.fi-btn-gray,
+.fi-btn.bg-gray-100, .fi-btn.bg-gray-200, .fi-btn.bg-gray-50, .fi-btn.bg-white,
+.fi-btn.border-gray-300, .fi-btn.border-gray-200,
+.fi-btn.text-gray-700, .fi-btn.text-gray-600 {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-btn-gray:hover,
+.fi-btn.bg-gray-100:hover, .fi-btn.bg-gray-200:hover, .fi-btn.bg-gray-50:hover,
+.fi-btn.bg-white:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+/* =====================================================================
+   19. BADGES
+   ===================================================================== */
+
+.fi-badge {
+    border-radius: 999px !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    padding-inline: 0.5rem !important;
+    padding-block: 0.15rem !important;
+}
+
+.fi-badge-color-primary,
+.fi-badge.bg-primary-500, .fi-badge.bg-primary-600, .fi-badge.bg-primary-100,
+.fi-badge.text-primary-700, .fi-badge.text-primary-600 {
+    background-color: rgba(22, 119, 255, 0.12) !important;
+    color: #2F8CFF !important;
+    border: 1px solid rgba(22, 119, 255, 0.25) !important;
+}
+
+.fi-badge-color-success,
+.fi-badge.bg-success-500, .fi-badge.bg-success-600, .fi-badge.bg-success-100,
+.fi-badge.bg-green-500, .fi-badge.bg-green-600, .fi-badge.bg-green-100,
+.fi-badge.text-success-700, .fi-badge.text-green-700 {
+    background-color: rgba(34, 197, 94, 0.12) !important;
+    color: #4ADE80 !important;
+    border: 1px solid rgba(34, 197, 94, 0.25) !important;
+}
+
+.fi-badge-color-danger,
+.fi-badge.bg-danger-500, .fi-badge.bg-danger-600, .fi-badge.bg-danger-100,
+.fi-badge.bg-red-500, .fi-badge.bg-red-600, .fi-badge.bg-red-100,
+.fi-badge.text-danger-700, .fi-badge.text-red-700 {
+    background-color: rgba(239, 68, 68, 0.12) !important;
+    color: #F87171 !important;
+    border: 1px solid rgba(239, 68, 68, 0.25) !important;
+}
+
+.fi-badge-color-warning,
+.fi-badge.bg-warning-500, .fi-badge.bg-warning-600, .fi-badge.bg-warning-100,
+.fi-badge.bg-yellow-500, .fi-badge.bg-yellow-600, .fi-badge.bg-yellow-100,
+.fi-badge.text-warning-700, .fi-badge.text-yellow-700 {
+    background-color: rgba(245, 158, 11, 0.12) !important;
+    color: #FBBF24 !important;
+    border: 1px solid rgba(245, 158, 11, 0.25) !important;
+}
+
+.fi-badge-color-gray,
+.fi-badge.bg-gray-500, .fi-badge.bg-gray-600, .fi-badge.bg-gray-100, .fi-badge.bg-gray-200,
+.fi-badge.bg-gray-700, .fi-badge.bg-gray-800, .fi-badge.bg-gray-900,
+.fi-badge.text-gray-700, .fi-badge.text-gray-600, .fi-badge.text-gray-500 {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: var(--vivio-text-secondary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =====================================================================
+   20. MODALS / DIALOGS
+   ===================================================================== */
+
+.fi-modal-window,
+.fi-modal-window.bg-white, .fi-modal-window.bg-gray-50,
+.fi-modal-window.bg-gray-100, .fi-modal-window.bg-gray-200,
+.fi-modal-window.bg-gray-900, .fi-modal-window.bg-gray-950,
+.fi-modal-window.rounded-xl, .fi-modal-window.rounded-2xl {
+    background-color: var(--vivio-overlay) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}
+
+.fi-modal-header {
+    border-bottom: 1px solid var(--vivio-border-subtle) !important;
+    padding: 1.25rem 1.5rem !important;
+}
+
+.fi-modal-header-heading {
+    color: var(--vivio-text) !important;
+    font-family: 'Space Grotesk', var(--font-family) !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+}
+
+.fi-modal-body {
+    color: var(--vivio-text) !important;
+    padding: 1.5rem !important;
+}
+
+.fi-modal-footer {
+    border-top: 1px solid var(--vivio-border-subtle) !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.fi-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.fi-simple-modal-window,
+.fi-simple-modal-window.bg-white, .fi-simple-modal-window.bg-gray-50,
+.fi-simple-modal-window.bg-gray-100, .fi-simple-modal-window.bg-gray-200,
+.fi-simple-modal-window.bg-gray-900 {
+    background-color: var(--vivio-overlay) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* =====================================================================
+   21. DROPDOWNS
+   ===================================================================== */
+
+.fi-dropdown-window,
+.fi-dropdown-window.bg-white, .fi-dropdown-window.bg-gray-50,
+.fi-dropdown-window.bg-gray-100, .fi-dropdown-window.bg-gray-200,
+.fi-dropdown-window.bg-gray-900, .fi-dropdown-window.bg-gray-950,
+.fi-dropdown-window.rounded-xl, .fi-dropdown-window.rounded-lg {
+    background-color: var(--vivio-overlay) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+    padding: 0.3rem !important;
+}
+
+.fi-dropdown-item {
+    color: var(--vivio-text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+    font-size: 0.82rem !important;
+    padding: 0.5rem 0.75rem !important;
+    transition: background-color 120ms ease, color 120ms ease !important;
+}
+
+.fi-dropdown-item:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-dropdown-item.fi-active,
+.fi-dropdown-item.bg-primary-50, .fi-dropdown-item.bg-primary-100 {
+    background-color: rgba(22, 119, 255, 0.1) !important;
+    color: #1677FF !important;
+}
+
+.fi-dropdown-divider,
+.fi-dropdown-divider.border-gray-200, .fi-dropdown-divider.border-gray-700 {
+    border-color: var(--vivio-border-subtle) !important;
+}
+
+/* =====================================================================
+   22. NOTIFICATIONS
+   ===================================================================== */
+
+.fi-notification,
+.fi-notification.bg-white, .fi-notification.bg-gray-50,
+.fi-notification.bg-gray-100, .fi-notification.bg-gray-200,
+.fi-notification.bg-gray-900, .fi-notification.bg-gray-950,
+.fi-notification.rounded-xl, .fi-notification.rounded-lg {
+    background-color: var(--vivio-overlay) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.fi-notification-title {
+    color: var(--vivio-text) !important;
+    font-weight: 500 !important;
+}
+
+.fi-notification-description {
+    color: var(--vivio-text-secondary) !important;
+}
+
+/* =====================================================================
+   23. TOOLTIPS
+   ===================================================================== */
+
+.fi-tooltip,
+.fi-tooltip.bg-gray-900, .fi-tooltip.bg-gray-800,
+.fi-tooltip.bg-gray-950 {
+    background-color: #101C2C !important;
+    color: #FFFFFF !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 0.76rem !important;
+    padding: 0.4rem 0.7rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* =====================================================================
+   24. SELECT DROPDOWN PANELS
+   ===================================================================== */
+
+.fi-select-dropdown,
+.fi-select-dropdown.bg-white, .fi-select-dropdown.bg-gray-50,
+.fi-select-dropdown.bg-gray-100, .fi-select-dropdown.bg-gray-200,
+.fi-select-dropdown.bg-gray-900, .fi-select-dropdown.bg-gray-950,
+.fi-select-dropdown.rounded-xl, .fi-select-dropdown.rounded-lg {
+    background-color: var(--vivio-overlay) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.fi-select-dropdown-item,
+.fi-select-dropdown-item.bg-white, .fi-select-dropdown-item.bg-gray-50,
+.fi-select-dropdown-item.bg-gray-100, .fi-select-dropdown-item.bg-gray-200,
+.fi-select-dropdown-item.bg-gray-900 {
+    background-color: transparent !important;
+    color: var(--vivio-text-secondary) !important;
+}
+
+.fi-select-dropdown-item:hover,
+.fi-select-dropdown-item.bg-gray-50:hover, .fi-select-dropdown-item.bg-gray-100:hover,
+.fi-select-dropdown-item.bg-gray-200:hover, .fi-select-dropdown-item.bg-gray-800:hover,
+.fi-select-dropdown-item.bg-gray-700:hover {
+    background-color: var(--vivio-hover) !important;
+    color: var(--vivio-text) !important;
+}
+
+.fi-select-dropdown-item.fi-active,
+.fi-select-dropdown-item.bg-primary-50, .fi-select-dropdown-item.bg-primary-100,
+.fi-select-dropdown-item.bg-primary-500, .fi-select-dropdown-item.bg-primary-600,
+.fi-select-dropdown-item.text-primary-600, .fi-select-dropdown-item.text-primary-700 {
+    background-color: rgba(22, 119, 255, 0.1) !important;
+    color: #1677FF !important;
+}
+
+/* =====================================================================
+   25. WIDGETS
+   ===================================================================== */
+
+.fi-widget,
+.fi-widget.bg-white, .fi-widget.bg-gray-50,
+.fi-widget.bg-gray-100, .fi-widget.bg-gray-200,
+.fi-widget.bg-gray-900, .fi-widget.bg-gray-950,
+.fi-widget.rounded-xl, .fi-widget.rounded-2xl {
+    background-color: var(--vivio-surface) !important;
+    border: 1px solid var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: none !important;
+}
+
+.fi-widget-header {
+    border-bottom: 1px solid var(--vivio-border-subtle) !important;
+    padding: 1rem 1.25rem !important;
+}
+
+.fi-widget-header-heading {
+    color: var(--vivio-text) !important;
+}
+
+.fi-widget-content {
+    color: var(--vivio-text) !important;
+    padding: 1rem 1.25rem !important;
+}
+
+/* =====================================================================
+   26. TABS (sub-navigation)
+   ===================================================================== */
+
+.fi-tabs-item {
+    color: var(--vivio-text-muted) !important;
+    font-size: 0.82rem !important;
+}
+
+.fi-tabs-item:hover {
+    color: var(--vivio-text) !important;
+}
+
+.fi-tabs-item.fi-active,
+.fi-tabs-item.bg-primary-50, .fi-tabs-item.bg-primary-100,
+.fi-tabs-item.text-primary-600, .fi-tabs-item.text-primary-700 {
+    color: #1677FF !important;
+    background-color: rgba(22, 119, 255, 0.08) !important;
+}
+
+.fi-tabs-item.fi-active .fi-tabs-item-label,
+.fi-tabs-item.text-primary-600 .fi-tabs-item-label,
+.fi-tabs-item.text-primary-700 .fi-tabs-item-label {
+    color: #1677FF !important;
+}
+
+.fi-tabs-list {
+    border-bottom-color: var(--vivio-border) !important;
+}
+
+/* =====================================================================
+   27. KEY-VALUE PAIR
+   ===================================================================== */
+
+.fi-key-value-input {
+    background-color: var(--vivio-elevated) !important;
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.fi-key-value-input .fi-input {
+    background-color: var(--vivio-bg) !important;
+    border-color: var(--vivio-border) !important;
+}
+
+/* =====================================================================
+   28. REPEATER
+   ===================================================================== */
+
+.fi-repeater-item {
+    border-color: var(--vivio-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background-color: var(--vivio-surface) !important;
+}
+
+.fi-repeater-item-header {
+    border-bottom-color: var(--vivio-border-subtle) !important;
+}
+
+.fi-repeater-item-actions {
+    background-color: transparent !important;
+}
+
+/* =====================================================================
+   29. AUTH / LOGIN — entering the operating system
+   ===================================================================== */
+
+body.fi-simple-layout {
+    background-color: #05080D !important;
+    background-image:
+        linear-gradient(rgba(7, 17, 31, 0.85), rgba(5, 8, 13, 0.96)),
+        repeating-linear-gradient(90deg, rgba(22, 119, 255, 0.04) 0 1px, transparent 1px 72px),
+        repeating-linear-gradient(0deg, rgba(22, 119, 255, 0.04) 0 1px, transparent 1px 72px) !important;
+    min-height: 100dvh !important;
+}
+
+body.fi-simple-layout .fi-simple-main,
+body.fi-simple-layout .fi-simple-main.bg-white, body.fi-simple-layout .fi-simple-main.bg-gray-50,
+body.fi-simple-layout .fi-simple-main.bg-gray-100, body.fi-simple-layout .fi-simple-main.bg-gray-200,
+body.fi-simple-layout .fi-simple-main.rounded-xl, body.fi-simple-layout .fi-simple-main.rounded-2xl,
+body.fi-simple-layout .fi-simple-main.shadow, body.fi-simple-layout .fi-simple-main.shadow-lg,
+body.fi-simple-layout .fi-simple-main.shadow-xl {
+    background-color: #0B1728 !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.fi-simple-layout .fi-logo {
+    max-height: 2.75rem !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+body.fi-simple-layout .fi-simple-header {
+    text-align: center !important;
+}
+
+body.fi-simple-layout .fi-simple-header-heading {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+body.fi-simple-layout .fi-simple-header-subheading {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.fi-simple-layout .fi-input,
+body.fi-simple-layout .fi-select,
+body.fi-simple-layout input, body.fi-simple-layout select {
+    background-color: #101C2C !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #FFFFFF !important;
+}
+
+body.fi-simple-layout .fi-input:focus,
+body.fi-simple-layout .fi-select:focus,
+body.fi-simple-layout input:focus, body.fi-simple-layout select:focus {
+    border-color: #1677FF !important;
+    box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.18) !important;
+}
+
+body.fi-simple-layout .fi-btn-primary,
+body.fi-simple-layout button[type="submit"],
+body.fi-simple-layout .fi-btn.bg-primary-600 {
+    background-color: #1677FF !important;
+    border-color: #1677FF !important;
+    color: #FFFFFF !important;
+}
+
+body.fi-simple-layout .fi-btn-primary:hover,
+body.fi-simple-layout button[type="submit"]:hover,
+body.fi-simple-layout .fi-btn.bg-primary-600:hover {
+    background-color: #2F8CFF !important;
+    border-color: #2F8CFF !important;
+}
+
+body.fi-simple-layout .fi-fo-field-wrp-label {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* =====================================================================
+   30. DASHBOARD — editorial composition
+   ===================================================================== */
+
+.vivio-admin {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: -0.75rem !important;
+}
+
+.vivio-overline {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.24em !important;
+    text-transform: uppercase !important;
+    color: #1677FF !important;
+    font-weight: 500 !important;
+}
+
+.vivio-meta {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-muted) !important;
+}
+
+.vivio-section-header {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding-bottom: 0.7rem !important;
+    border-bottom: 1px solid var(--vivio-border) !important;
+    margin-bottom: 1.1rem !important;
+}
+
+.vivio-section-header a {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: var(--vivio-text-muted) !important;
+    text-decoration: none !important;
+    transition: color 130ms ease !important;
+}
+
+.vivio-section-header a:hover { color: #1677FF !important; }
+
+/* Hero */
+.vivio-hero {
+    position: relative !important;
+    background: #07111F !important;
+    color: #FFFFFF !important;
+    padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.vivio-hero::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+    background-size: 88px 88px !important;
+    mask-image: radial-gradient(ellipse at 50% 20%, #000 25%, transparent 78%) !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+.vivio-hero-meta {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding-bottom: 1.25rem !important;
+    margin-bottom: clamp(1.25rem, 2.5vw, 2rem) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.vivio-hero-meta .vivio-hero-meta-cells {
+    display: flex !important;
+    gap: 1.1rem !important;
+}
+
+.vivio-hero-meta .vivio-hero-meta-cells span {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vivio-hero-meta .vivio-overline { color: #2F8CFF !important; }
+
+.vivio-hero-grid {
+    position: relative !important;
+    z-index: 2 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+    gap: clamp(1.5rem, 3.5vw, 3rem) !important;
+    align-items: stretch !important;
+}
+
+.vivio-hero-headline {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.9rem !important;
+    padding-block: 0.4rem !important;
+}
+
+.vivio-hero-greeting {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin: 0 !important;
+}
+
+.vivio-hero-title {
+    font-family: 'Space Grotesk', var(--font-family) !important;
+    font-size: clamp(2rem, 4.5vw, 3.5rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+    color: #FFFFFF !important;
+    margin: 0 !important;
+}
+
+.vivio-hero-tagline {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    color: rgba(255, 255, 255, 0.42) !important;
+    max-width: 38ch !important;
+    margin: 0 !important;
+}
+
+.vivio-hero-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.65rem !important;
+    margin-top: 0.15rem !important;
+}
+
+.vivio-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    padding: 0.6rem 1.1rem !important;
+    border-radius: var(--radius-md) !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transition: background-color 130ms ease, border-color 130ms ease, color 130ms ease !important;
+}
+
+.vivio-btn--primary {
+    background: #1677FF !important;
+    color: #FFFFFF !important;
+    border: 1px solid #1677FF !important;
+}
+
+.vivio-btn--primary:hover {
+    background: #2F8CFF !important;
+    border-color: #2F8CFF !important;
+    color: #FFFFFF !important;
+}
+
+.vivio-btn--ghost {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.vivio-btn--ghost:hover {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.vivio-btn--dark {
+    background: #101C2C !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.vivio-btn--dark:hover {
+    background: #16243A !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+}
+
+/* Hero visual / robot */
+.vivio-hero-visual {
+    position: relative !important;
+    min-height: 260px !important;
+}
+
+.vivio-hero-canvas {
+    position: relative !important;
+    height: 100% !important;
+    min-height: 260px !important;
+    background: linear-gradient(180deg, #0B1728 0%, #05080D 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.vivio-hero-canvas::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image:
+        linear-gradient(rgba(22, 119, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22, 119, 255, 0.05) 1px, transparent 1px) !important;
+    background-size: 44px 44px !important;
+    mask-image: radial-gradient(ellipse at 65% 85%, #000 20%, transparent 72%) !important;
+    pointer-events: none !important;
+}
+
+.vivio-hero-canvas::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 260px !important;
+    height: 260px !important;
+    bottom: -90px !important;
+    inset-inline-end: -35px !important;
+    background: radial-gradient(circle, rgba(22, 119, 255, 0.22) 0%, transparent 68%) !important;
+    filter: blur(18px) !important;
+    pointer-events: none !important;
+}
+
+.vivio-hero-robot {
+    position: absolute !important;
+    bottom: -8px !important;
+    inset-inline-end: 6% !important;
+    height: 88% !important;
+    max-height: 320px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    object-position: bottom !important;
+    filter: drop-shadow(0 0 36px rgba(22, 119, 255, 0.18)) !important;
+    pointer-events: none !important;
+}
+
+.vivio-hero-canvas-meta {
+    position: absolute !important;
+    z-index: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.12rem !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.56rem !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.vivio-hero-canvas-meta--top { top: 0.9rem !important; inset-inline-start: 0.9rem !important; }
+.vivio-hero-canvas-meta--bottom { bottom: 0.9rem !important; inset-inline-end: 0.9rem !important; text-align: end !important; }
+.vivio-hero-canvas-meta .is-online { color: #2F8CFF !important; }
+
+/* Metrics */
+.vivio-metrics {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 1px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.vivio-metric {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.45rem !important;
+    background: #07111F !important;
+    padding: 1.1rem 1.15rem 1rem !important;
+    text-decoration: none !important;
+    transition: background-color 130ms ease !important;
+}
+
+.vivio-metric:hover { background: #0B1728 !important; }
+
+.vivio-metric-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+}
+
+.vivio-metric-index {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2em !important;
+    color: #1677FF !important;
+}
+
+.vivio-metric-label {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vivio-metric-value {
+    font-family: 'Space Grotesk', var(--font-family) !important;
+    font-size: clamp(1.7rem, 2.5vw, 2.1rem) !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.04em !important;
+    color: #FFFFFF !important;
+}
+
+.vivio-metric-foot {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Dashboard grid */
+.vivio-dashboard-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    align-items: start !important;
+}
+
+.vivio-projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+}
+
+.vivio-project-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #07111F !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    transition: border-color 130ms ease, transform 130ms ease !important;
+}
+
+.vivio-project-card:hover {
+    border-color: rgba(22, 119, 255, 0.35) !important;
+    transform: translateY(-1px) !important;
+}
+
+.vivio-project-card-art {
+    aspect-ratio: 16 / 9 !important;
+    background: #0B1728 !important;
+    overflow: hidden !important;
+}
+
+.vivio-project-card-art img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.vivio-project-card-art--empty {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vivio-project-card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    padding: 0.9rem 1rem 1rem !important;
+}
+
+.vivio-project-card-index {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2em !important;
+    color: #1677FF !important;
+}
+
+.vivio-project-card-title {
+    font-family: 'Space Grotesk', var(--font-family) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.25 !important;
+    color: #FFFFFF !important;
+    margin: 0 !important;
+}
+
+.vivio-project-card-meta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3rem 0.7rem !important;
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vivio-project-card-meta .is-live { color: #1677FF !important; }
+
+.vivio-rail {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.1rem !important;
+}
+
+.vivio-rail-block {
+    background: #07111F !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 1.1rem !important;
+}
+
+.vivio-rail-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.vivio-rail-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+.vivio-rail-list li:last-child { border-bottom: none !important; }
+
+.vivio-lead-row {
+    display: grid !important;
+    grid-template-columns: auto 1fr auto !important;
+    align-items: baseline !important;
+    column-gap: 0.7rem !important;
+    padding: 0.6rem 0 !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.vivio-lead-time {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+    color: #1677FF !important;
+}
+
+.vivio-lead-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.08rem !important;
+    min-width: 0 !important;
+}
+
+.vivio-lead-name {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: #FFFFFF !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.vivio-lead-type {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.56rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.28) !important;
+}
+
+.vivio-lead-status {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.54rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 999px !important;
+    padding: 0.12rem 0.4rem !important;
+}
+
+.vivio-lead-status--new {
+    color: #1677FF !important;
+    border-color: rgba(22, 119, 255, 0.3) !important;
+}
+
+.vivio-empty {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.8rem !important;
+    padding: 2.5rem 1.25rem !important;
+    text-align: center !important;
+}
+
+.vivio-empty img {
+    height: 100px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    opacity: 0.8 !important;
+    filter: drop-shadow(0 0 24px rgba(22, 119, 255, 0.14)) !important;
+}
+
+.vivio-empty-title {
+    font-family: var(--mono-font-family) !important;
+    font-size: 0.66rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.24em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+    margin: 0 !important;
+}
+
+.vivio-empty-text {
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    margin: 0 !important;
+    max-width: 28ch !important;
+}
+
+/* =====================================================================
+   31. RESPONSIVE
+   ===================================================================== */
+
+@media (max-width: 1280px) {
+    .vivio-metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .vivio-hero-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .vivio-hero-visual {
+        min-height: 220px !important;
+    }
+
+    .vivio-dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .vivio-admin {
+        gap: 2rem !important;
+    }
+
+    .vivio-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .vivio-projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .vivio-hero {
+        padding: 1.1rem 1rem !important;
+    }
+
+    .vivio-hero-robot {
+        height: 72% !important;
+        max-height: 220px !important;
+    }
+
+    .vivio-hero-meta .vivio-hero-meta-cells {
+        display: none !important;
+    }
+}
+
+/* =====================================================================
+   32. RTL
+   ===================================================================== */
+
+[dir='rtl'] .vivio-hero-title {
+    letter-spacing: 0 !important;
+    line-height: 1.15 !important;
+}
+
+/* =====================================================================
+   33. TRANSITIONS — subtle motion
+   ===================================================================== */
+
+.fi-sidebar {
+    transition: width 200ms ease !important;
+}
+
+.fi-topbar {
+    transition: background-color 130ms ease !important;
+}
+
+.fi-section {
+    transition: border-color 130ms ease !important;
+}
+
+/* =====================================================================
+   34. GLOBAL OVERRIDES — systematic dark surface enforcement
+   ===================================================================== */
+
+/* Backgrounds — force dark on ALL class variants */
+.bg-white, .bg-white\/\* { background-color: var(--vivio-surface) !important; }
+.bg-gray-50 { background-color: var(--vivio-elevated) !important; }
+.bg-gray-100 { background-color: var(--vivio-elevated) !important; }
+.bg-gray-200 { background-color: var(--vivio-elevated) !important; }
+.bg-gray-300 { background-color: var(--vivio-elevated) !important; }
+
+/* Text colors */
+.text-gray-500 { color: var(--vivio-text-muted) !important; }
+.text-gray-600 { color: var(--vivio-text-secondary) !important; }
+.text-gray-700 { color: var(--vivio-text-secondary) !important; }
+.text-gray-800 { color: var(--vivio-text) !important; }
+.text-gray-900 { color: var(--vivio-text) !important; }
+.text-gray-950 { color: var(--vivio-text) !important; }
+
+/* Border colors */
+.border-gray-200 { border-color: var(--vivio-border) !important; }
+.border-gray-300 { border-color: var(--vivio-border) !important; }
+.border-gray-700 { border-color: var(--vivio-border) !important; }
+.border-gray-800 { border-color: var(--vivio-border) !important; }
+.border-gray-900 { border-color: var(--vivio-border) !important; }
+
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]) { border-color: var(--vivio-border-subtle) !important; }
+.divide-gray-700 > :not([hidden]) ~ :not([hidden]) { border-color: var(--vivio-border-subtle) !important; }
+
+/* Ring colors (focus states) */
+.ring-primary-500 { --tw-ring-color: #1677FF !important; }
+.ring-primary-600 { --tw-ring-color: #1677FF !important; }
+.ring-primary-200 { --tw-ring-color: rgba(22, 119, 255, 0.18) !important; }
+
+/* Placeholder text */
+.placeholder-gray-400::placeholder { color: var(--vivio-text-muted) !important; }
+.placeholder-gray-500::placeholder { color: var(--vivio-text-muted) !important; }
+
+/* Shadow removal */
+.shadow-sm, .shadow, .shadow-md, .shadow-lg, .shadow-xl { box-shadow: none !important; }

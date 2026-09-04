@@ -1,0 +1,6 @@
+<svg width="320" height="64" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="8" width="48" height="48" rx="6" fill="#2563EB"/>
+  <path d="M16 20 L34 46 L40 33 L28 20 Z" fill="#FFFFFF"/>
+  <path d="M56 20 L38 46 L32 33 L44 20 Z" fill="#93C5FD"/>
+  <text x="66" y="42" font-family="'Space Grotesk', system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="2" fill="#FFFFFF">VIVIO</text>
+</svg>
