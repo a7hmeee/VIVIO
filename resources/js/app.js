@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { initHeroScene } from './three-hero.js';
 
 /* ========================================
    VIVIO Frontend Entry Point
@@ -43,6 +44,12 @@ function initHero() {
     const hero = document.querySelector('[data-hero]');
     if (!hero) return;
 
+    /* — Three.js Scene — */
+    const threeContainer = hero.querySelector('[data-hero-three]');
+    if (threeContainer && !reducedMotion) {
+        hero.__threeScene = initHeroScene(threeContainer);
+    }
+
     if (reducedMotion) {
         hero.querySelectorAll('[data-hero-line] > span').forEach(s => s.style.transform = 'none');
         hero.querySelectorAll('[data-hero-fade]').forEach(s => s.style.opacity = '1');
@@ -52,7 +59,6 @@ function initHero() {
     const lines = hero.querySelectorAll('[data-hero-line] > span');
     const fades = hero.querySelectorAll('[data-hero-fade]');
     const robot = hero.querySelector('[data-robot]');
-    const robotAsset = robot?.querySelector('.vivio-robot__asset');
     const robotLabels = hero.querySelectorAll('.vivio-robot__label, .vivio-robot__meta');
     const robotRings = hero.querySelectorAll('.vivio-robot__ring, .vivio-robot__orbit');
     const meta = hero.querySelector('.vivio-hero__meta');
@@ -63,7 +69,7 @@ function initHero() {
     /* — Initial states — */
     gsap.set(lines, { yPercent: 115, opacity: 0 });
     gsap.set(fades, { opacity: 0, y: 16 });
-    gsap.set(robotAsset, { x: 40, y: 30, scale: .92, opacity: 0, rotate: 2 });
+    if (robot) gsap.set(robot, { x: 40, y: 30, scale: .92, opacity: 0, rotate: 2 });
     gsap.set(robotLabels, { opacity: 0, x: -8 });
     gsap.set(robotRings, { scale: .7, opacity: 0 });
     gsap.set(grid, { opacity: 0 });
@@ -76,11 +82,13 @@ function initHero() {
     tl.to(grid, { opacity: .18, duration: 1.4, ease: 'power2.out' }, 0);
 
     /* Phase 2: Robot begins assembling — displaced, then locks */
-    tl.to(robotAsset, {
-        x: 0, y: 0, scale: 1, opacity: 1, rotate: 0,
-        duration: 1.8,
-        ease: 'power3.out',
-    }, .2);
+    if (robot) {
+        tl.to(robot, {
+            x: 0, y: 0, scale: 1, opacity: 1, rotate: 0,
+            duration: 1.8,
+            ease: 'power3.out',
+        }, .2);
+    }
 
     tl.to(robotRings, {
         scale: 1, opacity: 1,
@@ -124,8 +132,8 @@ function initHero() {
     }, '-=.3');
 
     /* — Robot idle — subtle, intentional — */
-    if (robotAsset) {
-        gsap.to(robotAsset, {
+    if (robot) {
+        gsap.to(robot, {
             y: -6,
             duration: 3.5,
             repeat: -1,
@@ -133,7 +141,7 @@ function initHero() {
             ease: 'sine.inOut',
             delay: 2.5,
         });
-        gsap.to(robotAsset, {
+        gsap.to(robot, {
             scale: 1.015,
             duration: 4,
             repeat: -1,
@@ -152,9 +160,9 @@ function initHero() {
             }, { passive: true });
             robot.addEventListener('pointerleave', () => { tx = 0; ty = 0; });
             gsap.ticker.add(() => {
-                gsap.set(robotAsset, {
+                gsap.set(robot, {
                     x: gsap.utils.interpolate(
-                        gsap.getProperty(robotAsset, 'x') || 0, tx, .06
+                        gsap.getProperty(robot, 'x') || 0, tx, .06
                     ),
                 });
             });
@@ -181,11 +189,13 @@ function initHero() {
         }, 0);
 
         /* Robot moves deeper on different plane */
-        scrollTl.to(robotAsset, {
-            y: -80,
-            scale: .85,
-            ease: 'none',
-        }, 0);
+        if (robot) {
+            scrollTl.to(robot, {
+                y: -80,
+                scale: .85,
+                ease: 'none',
+            }, 0);
+        }
 
         /* Supporting text exits faster */
         scrollTl.to(fades, {
